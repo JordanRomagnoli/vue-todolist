@@ -48,7 +48,6 @@ createApp ({
         },
 
         removeTask(i) {
-            console.log(i, this.todos[i]);
             this.todos.splice(i, 1);
         }
     },

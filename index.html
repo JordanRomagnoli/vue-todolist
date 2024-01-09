@@ -41,7 +41,9 @@
                             <li v-for="(singleTask, index) in todos" class="d-flex justify-content-between align-items-center"> 
                                 
                                 <div>
-                                    <span>{{ singleTask.text }}</span>
+                                    <span :class="singleTask.done == false ? 'task-not-done' : ''">
+                                        {{ singleTask.text }}
+                                    </span>
                                 </div>
 
                                 <a href="#nogo" @click="removeTask(index)" class="text-decoration-none">
@@ -51,7 +53,7 @@
                         </ul>
 
                         <p v-else>
-                            Non Task in programma !
+                            Nessun Task in programma !
                         </p>
 
                     </div>
