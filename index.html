@@ -24,9 +24,9 @@
                     <div class="col-12 d-flex justify-content-center pt-5">
                         <h1>To Do</h1>
                     </div>
-                    <div class="col-12 d-flex justify-content-center mt-2 align-items-center g-0">
+                    <div class="col-12 d-flex justify-content-center mt-2 align-items-center mb-3">
 
-                        <div class="input-group mb-3">
+                        <div class="input-group">
                             <input type="text" class="form-control" @keyup.enter="addTask()" placeholder="Inserisci qui" v-model="newTaskInput">
                         </div>
 
@@ -38,15 +38,13 @@
                     <div class="col-12">
 
                         <ul v-if=" todos.length > 0">
-                            <li v-for="(singleTask, index) in todos" class="d-flex justify-content-between align-items-center"> 
+                            <li v-for="(singleTask, index) in todos" class="d-flex justify-content-between align-items-center bg-secondary text-white p-2 my-1 rounded-3"> 
                                 
-                                <div>
-                                    <span :class="singleTask.done == true ? 'task-not-done' : ''" @click="">
-                                        {{ singleTask.text }}
-                                    </span>
-                                </div>
+                                <span :class="singleTask.done == true ? 'task-not-done' : ''" @click="toggleDone(index)">
+                                    {{ singleTask.text }}
+                                </span>
 
-                                <a href="#nogo" @click="removeTask(index)" class="text-decoration-none">
+                                <a href="#nogo" @click="removeTask(index)" class="text-decoration-none text-white">
                                     X
                                 </a>
                             </li>

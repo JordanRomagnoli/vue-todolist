@@ -27,7 +27,7 @@ createApp ({
 
         addTask(){
 
-            if(this.newTaskInput.length > 2){
+            if(this.newTaskInput.trim().length > 2){
                 
                 let newTask = {};
 
@@ -40,15 +40,16 @@ createApp ({
 
                 this.newTaskInput = '';
 
-
-                console.log(this.todos);
-
             };
 
         },
 
         removeTask(i) {
             this.todos.splice(i, 1);
+        },
+
+        toggleDone(i) {
+            this.todos[i].done = !this.todos[i].done;
         },
 
     },
