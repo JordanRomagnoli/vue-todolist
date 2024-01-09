@@ -11,7 +11,7 @@ createApp ({
                 },
                 {
                     text: 'andare in palestra',
-                    done: false,
+                    done: true,
                 },
                 {
                     text: 'chiamare ufficio',
@@ -49,6 +49,7 @@ createApp ({
 
         removeTask(i) {
             this.todos.splice(i, 1);
-        }
+        },
+
     },
 }).mount('#app');

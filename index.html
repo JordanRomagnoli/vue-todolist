@@ -27,7 +27,7 @@
                     <div class="col-12 d-flex justify-content-center mt-2 align-items-center g-0">
 
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control"  placeholder="Inserisci qui" v-model="newTaskInput">
+                            <input type="text" class="form-control" @keyup.enter="addTask()" placeholder="Inserisci qui" v-model="newTaskInput">
                         </div>
 
                         <button type="button" class="btn btn-primary mx-2" @click="addTask()">
@@ -41,7 +41,7 @@
                             <li v-for="(singleTask, index) in todos" class="d-flex justify-content-between align-items-center"> 
                                 
                                 <div>
-                                    <span :class="singleTask.done == false ? 'task-not-done' : ''">
+                                    <span :class="singleTask.done == true ? 'task-not-done' : ''" @click="">
                                         {{ singleTask.text }}
                                     </span>
                                 </div>
